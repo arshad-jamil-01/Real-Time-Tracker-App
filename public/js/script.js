@@ -1,13 +1,13 @@
-const socket = io(); // ye code mera hai
+//const socket = io(); // ye code mera hai
 
 //ye code chat gpt ka hai
-// let myId;
+let myId;
 
-// const socket = io();
+const socket = io();
 
-// socket.on("connect", () => {
-//   myId = socket.id;
-// });  ///yaha tak code chat gpt ka hai
+socket.on("connect", () => {
+  myId = socket.id;
+ });  ///yaha tak code chat gpt ka hai
 
 
 
@@ -27,7 +27,7 @@ if(navigator.geolocation){
 );
 }
 
-const map = L.map("map").setView([0, 0], 16);
+const map = L.map("map").setView([0, 0], 15);
 
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution:
@@ -52,17 +52,17 @@ socket.on("user-disconnected", (id)=>{
 
 
 //ye code mera hai
-if(marker[id]){
-    map.removeLayer(marker[id])
-    delete marker[id]
-}
+// if(marker[id]){
+//     map.removeLayer(marker[id])
+//     delete marker[id]
+// }
 
 
 //ye code chat gpt ka hai
-// if (id !== myId && marker[id]) {
-//     map.removeLayer(marker[id]);
-//     delete marker[id];
-//   }
+if (id !== myId && marker[id]) {
+    map.removeLayer(marker[id]);
+    delete marker[id];
+  }
 
 
 })
